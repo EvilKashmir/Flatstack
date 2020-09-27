@@ -66,15 +66,15 @@ class LinkedList
   end
 end
 
-ll = LinkedList.new(3)
-ll << 4
-ll << 5
+ll = LinkedList.new(1)
+ll << 2
+ll << 3
 ll.each { |n| puts n }
 puts
 puts ll[3]
 puts ll[2]
 puts ll[1]
-ll[3]= 6
+ll[2]= 10
 puts
 puts ll[3]
 puts

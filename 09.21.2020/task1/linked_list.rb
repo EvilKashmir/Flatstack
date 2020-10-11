@@ -1,15 +1,4 @@
-class Node
-  attr_accessor :value, :next
-
-  def initialize(value)
-    @value = value
-    @next = nil
-  end
-
-  def to_s
-    @value.to_s
-  end
-end
+require_relative 'node'
 
 class LinkedList
   include Enumerable
@@ -30,14 +19,13 @@ class LinkedList
   end
 
   def empty?
-    true if (@size == 0)
+    true if @size.zero?
   end
 
   def [](index)
     raise "Empty linkedlist" if empty?
-    if (index > size || index < 0)
-      raise "Wrong index"
-    end
+    raise "Wrong index" if index > size || index.negative?
+
     count = 1
     res = @head
     while count < index
@@ -48,10 +36,9 @@ class LinkedList
   end
 
   def []=(index, value)
-  	raise "Empty linkedlist" if empty?
-  	if (index > size || index < 0)
-      raise "Wrong index"
-    end
+    raise "Empty linkedlist" if empty?
+    raise "Wrong index" if index > size || index.negative?
+
     node = self[index]
     node.value = value
     return
@@ -65,18 +52,3 @@ class LinkedList
     end
   end
 end
-
-ll = LinkedList.new(1)
-ll << 2
-ll << 3
-ll.each { |n| puts n }
-puts
-puts ll[3]
-puts ll[2]
-puts ll[1]
-ll[2]= 10
-puts
-puts ll[3]
-puts
-ll.each { |n| puts n }
-puts ll.include?(Node.new(6))

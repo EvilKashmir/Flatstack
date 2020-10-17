@@ -16,17 +16,13 @@ class MyData
   def method_missing(method_name)
     column = 0
     method_name = method_name.to_s.gsub("sort_by_", "")
-    while @columns_names[column].to_s.gsub(/\s+/, "").downcase != method_name && column < @columns_names.length
+    while (@columns_names[column].to_s.gsub(/\s+/, "").downcase != method_name) && (column < @columns_names.length)
       column += 1
     end
-    if column >= @columns_names.length
-      raise "Wrong input"
-    end
+    raise "Wrong input" if column >= @columns_names.length
     old_lines = @lines
     @lines = []
-    old_lines.map do |line|
-      @lines << line.split(", ")
-    end
+    old_lines.map { |line| @lines << line.split(", ") }
     data_sort(column)
   end
 

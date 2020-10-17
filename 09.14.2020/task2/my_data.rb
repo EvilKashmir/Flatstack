@@ -4,9 +4,11 @@ class MyData
   def initialize(path)
     if File.exist?(path)
       file = File.open(path, "r:UTF-8")
-      @lines = file.readlines.map { |line| line.chomp }
-      @columns_names = @lines[0].split(", ")
-      @lines.delete_at(0)
+      temp = file.readlines.map { |line| line.chomp }
+      @columns_names = temp[0].split(", ")
+      temp.delete_at(0)
+      @lines = []
+      temp.map { |line| @lines << line.split(", ") }
       file.close
     else
       raise "Not Found"
@@ -20,13 +22,6 @@ class MyData
       column += 1
     end
     raise "Wrong input" if column >= @columns_names.length
-    old_lines = @lines
-    @lines = []
-    old_lines.map { |line| @lines << line.split(", ") }
-    data_sort(column)
-  end
-
-  def data_sort(column)
     @lines.sort! { |x, y| x[column] <=> y[column] }
   end
 

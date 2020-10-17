@@ -1,0 +1,12 @@
+First Name, Second Name, Phone Number, Address, Website URL
+Vladimir, Bazhanov, +79375295624, Pushkina 46, http://flatstack.com
+Ivan, Ivanov, +7 977 77 77 777, Unknown street 46, http://google.com
+Maksyut, Sergeev, , Pobedy 105, http://stud.kpfu.ru
+Petr, Romanovsky, 89171234567, Peterburgskaya 11, http://romanov.com
+Sergey, Tinkov, 317-705-4360, 3508 Wall Street, http://tinkov.com
+Svetlana, Tikhonova, 202-270-7455, 4274 White&Red Street, http://belru.com
+Alexey, Navalnov, 909-630-4706, 3485 Tverskaya Avenue, http://gosdep.com
+Vladlena, Ulyanova, 443-416-7986, 2541 Paradise Avenue, http://redrussia.com
+Kim, Jong Bonk, 307-747-934, 4862 Korean Street, http://chuchkhe.com
+Karl, Marksov, 660-382-8792, 1396 Paradise Street, http://redworld.com
+Josef, Mengleev, 19-4119-4500, 8841 Brandenburg Street, http://gehospital.com

@@ -6,7 +6,6 @@ class MyData
       file = File.open(path, "r:UTF-8")
       @lines = file.readlines.map { |line| line.chomp }
       @columns_names = @lines[0].split(", ")
-      p @columns_names
       @lines.delete_at(0)
       file.close
     else
@@ -23,9 +22,9 @@ class MyData
     if column >= @columns_names.length
       raise "Wrong input"
     end
-    lines = @lines
+    old_lines = @lines
     @lines = []
-    lines.map do |line|
+    old_lines.map do |line|
       @lines << line.split(", ")
     end
     data_sort(column)

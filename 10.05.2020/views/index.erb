@@ -6,6 +6,7 @@
       <li>
         <a href="/todos/<%= item['id'] %>" style="display: inline-block;">
           <%= item["title"] %>
+          <%= item["id"] %>
         </a>
 
         <form method="POST" action="/todos" style="display: inline-block;">

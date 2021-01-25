@@ -1,13 +1,13 @@
 body {
-  background-color: white;
-  color: #333;
+  background-color: $body--main;
+  color: $black;
   margin: 0;
   font-family: verdana, arial, helvetica, sans-serif;
 }
 
 body, p, ol, ul, td {
 
-  font-size: 13px;
+  font-size: 16px;
   line-height: 18px;
 }
 
@@ -39,8 +39,20 @@ div.actions {
   margin-bottom: 10px;
 }
 
-#notice {
-  color: green;
+.message {
+  &:not(:empty) {
+    padding: 5px;
+    border: 1px solid;
+    background-color: lighten($green, 50%);
+  }
+
+  &--nnotice {
+    color: green;
+  }
+
+  &--alert {
+    color: red;
+  }
 }
 
 label {

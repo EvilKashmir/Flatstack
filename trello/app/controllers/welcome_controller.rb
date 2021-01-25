@@ -1,5 +1,4 @@
 class WelcomeController < ApplicationController
   layout 'tasks'
-  def index
-  end
+  def index; end
 end

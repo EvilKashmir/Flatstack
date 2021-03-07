@@ -1,6 +1,0 @@
-set -e
-
-rubocop --display-style-guide
-
-scss-lint app/assets/stylesheets
-slim-lint app/views/**/*.slim`

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Example = ({error, children, size, list:any[] = []}) => {
+const Example = ({error, children, size, list:any = []}) => {
     return (
         <>
             <div style={{color: error ? 'red' : 'green'}}>{children} size = {size}</div>

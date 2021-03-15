@@ -1,21 +1,27 @@
-// import logo from './logo.svg';
-import {useState} from 'react';
+import { useState } from 'react';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import defaultTheme from './config/theme/default';
 import './App.css';
-import Examples from './Test';
+import Examples from './examples';
 
-const initialList = [
-    {name: 'F'},
-    {name: 'S'},
-    {name: 'T'},
-];
+const initialList = [];
 
 function App() {
-    const [list, setList] = useState(initialList);
-    return (
-        <div className="App">
-            <Examples size={5}> Example One </Examples>
-        </div>
-    );
+  const [list, setList] = useState(initialList);
+  const addToList = (newElement) => setList([...list, { name: newElement }]);
+  const exampleProps = {
+    size: 5,
+    error: false,
+    list,
+    addToList,
+  };
+  return (
+    <StyledThemeProvider theme={defaultTheme}>
+      <div className="App">
+        <Examples {...exampleProps}>Example One</Examples>
+      </div>
+    </StyledThemeProvider>
+  );
 }
 
 export default App;

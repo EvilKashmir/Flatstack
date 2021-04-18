@@ -7,17 +7,22 @@ const StyledInput = styled.input(
     border-radius: 5px;
     border: none;
     padding: 4px 8px;
-    &:focus {
-        color: black;
+    :focus {
+      border: 1px solid blue;
+    }
+    :disabled {
+      border: 1px solid gray;
     }
     &:hover { 
-        background-color: #ccc;
+      background-color: #ccc;
     }
   `);
 
-const Input = (props) => {
-  const {disabled, children} = props;
-  return <StyledInput primary={disabled}>{children}</StyledInput>;
+const Input = ({ onChange, ...props }) => {
+  const handleChange = (ev) => {
+    onChange(ev.target.value);
+  };
+  return <StyledInput {...props} onChange={handleChange} />;
 };
 
 export default Input;

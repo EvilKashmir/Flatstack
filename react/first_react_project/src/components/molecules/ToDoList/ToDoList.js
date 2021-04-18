@@ -21,7 +21,7 @@ const ToDoList = (props) => {
         <ToDoListItem key={`${i}-${listItem.text}`}>
           <CheckBox />
           {listItem.text}
-          <StyledButton error outlined onClick={() => onRemove(i)}>
+          <StyledButton error outlined={false} onClick={() => onRemove(i)}>
             X
           </StyledButton>
         </ToDoListItem>

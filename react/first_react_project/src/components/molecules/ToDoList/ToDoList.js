@@ -14,13 +14,13 @@ const StyledButton = styled(Button)`
 
 
 const ToDoList = (props) => {
-  const { list, onRemove } = props;
+  const { list, onRemove, onCheck } = props;
   return (
     <List>
       {list.map((listItem, i) => (
-        <ToDoListItem key={`${i}-${listItem.text}`}>
-          <CheckBox />
-          {listItem.text}
+        <ToDoListItem key={`${i}-${listItem.text}`} checked={listItem.checked}>
+          <CheckBox onChange={(ev) => onCheck(ev, i)} checked={listItem.checked} />
+          <span>{listItem.text}</span>
           <StyledButton error outlined={false} onClick={() => onRemove(i)}>
             X
           </StyledButton>
